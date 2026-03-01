@@ -1,0 +1,21 @@
+{
+    "title": "Crawl4AI Input",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "urls": {
+            "title": "URLs to crawl",
+            "type": "array",
+            "description": "List of URLs you want to convert to Markdown.",
+            "editor": "stringList",
+            "prefill": ["https://apify.com"]
+        },
+        "extraction_strategy": {
+            "title": "Extraction Strategy",
+            "type": "string",
+            "enum": ["markdown", "json", "text"],
+            "default": "markdown"
+        }
+    },
+    "required": ["urls"]
+}
