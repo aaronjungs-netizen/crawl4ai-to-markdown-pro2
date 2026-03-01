@@ -1,42 +1,39 @@
 import asyncio
 from apify import Actor
-from crawl4ai import AsyncWebCrawler
+from crawl4ai import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig
 
 async def main():
     async with Actor:
-        # 1. Get the input from the Apify console
+        # Get user input
         actor_input = await Actor.get_input() or {}
-        urls = actor_input.get("urls", ["https://apify.com"])
-        
-        if not urls:
-            await Actor.fail(reason="No URLs provided in the input.")
-            return
+        url = actor_input.get("url", "https://apify.com")
 
-        print(f"Starting crawl for {len(urls)} URLs...")
+        # Config for Apify's Docker environment
+        browser_cfg = BrowserConfig(
+            headless=True,
+            extra_args=["--no-sandbox", "--disable-setuid-sandbox"]
+        )
 
-        # 2. Initialize the Crawl4AI crawler
-        async with AsyncWebCrawler(verbose=True) as crawler:
-            for url in urls:
-                print(f"Crawling: {url}")
-                
-                # 3. Perform the crawl
+        try:
+            async with AsyncWebCrawler(config=browser_cfg) as crawler:
+                # Perform the crawl
                 result = await crawler.arun(url=url)
 
                 if result.success:
-                    # 4. Save the Markdown result to the Apify Dataset
+                    # Save results - KEYS MUST MATCH output_schema.json
                     await Actor.push_data({
                         "url": url,
-                        "markdown": result.markdown,
-                        "success": True
+                        "title": result.metadata.get("title", "No Title"),
+                        "markdown": result.markdown
                     })
-                    print(f"Successfully crawled {url}")
+                    Actor.log.info(f"Successfully scraped: {url}")
                 else:
-                    await Actor.push_data({
-                        "url": url,
-                        "error": result.error_message,
-                        "success": False
-                    })
-                    print(f"Failed to crawl {url}: {result.error_message}")
+                    Actor.log.error(f"Crawl failed: {result.error_message}")
+                    await Actor.fail()
+
+        except Exception as e:
+            Actor.log.error(f"Runtime error: {e}")
+            await Actor.fail()
 
 if __name__ == "__main__":
     asyncio.run(main())
