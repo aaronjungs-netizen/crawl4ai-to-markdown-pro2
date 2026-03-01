@@ -1,8 +1,19 @@
-"urls": {
-    "title": "URLs to crawl",
-    "type": "array",
-    "editor": "requestListSources",
-    "prefill": [
-        { "url": "https://apify.com" } 
-    ]
+{
+    "title": "Crawl4AI Input",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "urls": {
+            "title": "URLs to crawl",
+            "type": "array",
+            "description": "List of URLs to crawl.",
+            "editor": "requestListSources",
+            "prefill": [
+                {
+                    "url": "https://apify.com"
+                }
+            ]
+        }
+    },
+    "required": ["urls"]
 }
