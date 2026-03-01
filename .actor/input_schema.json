@@ -1,18 +1,13 @@
 {
-    "actorSpecification": 1,
-    "title": "Crawl4AI Input",
-    "type": "object",
-    "schemaVersion": 1,
-    "properties": {
-        "urls": {
-            "title": "URLs to crawl",
-            "type": "array",
-            "description": "Provide URLs starting with https://",
-            "editor": "requestListSources",
-            "prefill": [
-                { "url": "https://apify.com" }
-            ]
-        }
-    },
-    "required": ["urls"]
+  "title": "Crawl4AI Configuration",
+  "type": "object",
+  "schemaVersion": 1,
+  "properties": {
+    "startUrls": {
+      "title": "URLs to crawl",
+      "type": "array",
+      "description": "List of URLs to start from",
+      "editor": "requestListSources"
+    }
+  }
 }
