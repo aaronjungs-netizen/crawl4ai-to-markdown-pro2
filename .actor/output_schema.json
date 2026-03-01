@@ -1,24 +1,28 @@
 {
     "actorOutputSchemaVersion": 1,
-    "title": "Crawl4AI Web Scraper Results",
+    "title": "Crawl4AI Results",
     "type": "object",
     "properties": {
         "url": {
             "type": "string",
             "title": "Source URL",
-            "description": "The URL of the webpage."
+            "format": "uri"
         },
         "title": {
             "type": "string",
-            "title": "Page Title",
-            "description": "Extracted title of the page."
+            "title": "Page Title"
         },
         "markdown": {
             "type": "string",
-            "title": "Markdown Content",
-            "description": "Cleaned markdown content.",
-            "contentMediaType": "text/markdown"
+            "title": "Markdown Content"
+        }
+    },
+    "views": {
+        "overview": {
+            "title": "Overview",
+            "description": "Scraped data overview",
+            "type": "table",
+            "displayProperties": ["url", "title", "markdown"]
         }
     }
 }
-
