@@ -6,22 +6,31 @@
         "url": {
             "title": "Source URL",
             "type": "string",
-            "view": {
-                "template": "text"
+            "views": {
+                "overview": {
+                    "template": "link",
+                    "label": "URL"
+                }
             }
         },
         "title": {
             "title": "Page Title",
             "type": "string",
-            "view": {
-                "template": "text"
+            "views": {
+                "overview": {
+                    "template": "text",
+                    "label": "Title"
+                }
             }
         },
         "markdown": {
             "title": "Markdown Content",
             "type": "string",
-            "view": {
-                "template": "text"
+            "views": {
+                "overview": {
+                    "template": "text",
+                    "label": "Markdown"
+                }
             }
         }
     }
