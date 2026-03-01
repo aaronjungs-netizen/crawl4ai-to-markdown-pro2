@@ -1,4 +1,5 @@
 {
+    "actorSpecification": 1,
     "title": "Crawl4AI Input",
     "type": "object",
     "schemaVersion": 1,
@@ -6,12 +7,10 @@
         "urls": {
             "title": "URLs to crawl",
             "type": "array",
-            "description": "List of URLs to crawl.",
+            "description": "Provide URLs starting with https://",
             "editor": "requestListSources",
             "prefill": [
-                {
-                    "url": "https://apify.com"
-                }
+                { "url": "https://apify.com" }
             ]
         }
     },
