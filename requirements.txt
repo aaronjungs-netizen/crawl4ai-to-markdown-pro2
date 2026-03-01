@@ -37,4 +37,6 @@ pypdf>=6.0.0
 pypdf>=6.0.0
 apify
 crawl4ai
+crawl4ai
+playwright
 
