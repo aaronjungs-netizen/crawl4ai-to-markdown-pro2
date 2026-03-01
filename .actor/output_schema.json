@@ -4,25 +4,28 @@
     "type": "object",
     "properties": {
         "url": {
-            "type": "string",
             "title": "Source URL",
-            "format": "uri"
+            "type": "string",
+            "view": {
+                "template": "link",
+                "label": "URL"
+            }
         },
         "title": {
+            "title": "Page Title",
             "type": "string",
-            "title": "Page Title"
+            "view": {
+                "template": "text",
+                "label": "Title"
+            }
         },
         "markdown": {
+            "title": "Markdown Content",
             "type": "string",
-            "title": "Markdown Content"
-        }
-    },
-    "views": {
-        "overview": {
-            "title": "Overview",
-            "description": "Scraped data overview",
-            "type": "table",
-            "displayProperties": ["url", "title", "markdown"]
+            "view": {
+                "template": "text",
+                "label": "Content"
+            }
         }
     }
 }
