@@ -2,6 +2,6 @@
     "actorSpecification": 1,
     "name": "crawl4ai-to-markdown-pro2",
     "version": "0.0",
-    "input": "./INPUT_SCHEMA.json",
+    "input": "INPUT_SCHEMA.json",
     "dockerfile": "../Dockerfile"
 }
