@@ -5,7 +5,6 @@ from crawl4ai import AsyncWebCrawler
 async def main():
     async with Actor:
         # 1. Get the input from the Apify console
-        # If no input is provided, use the prefill URL
         actor_input = await Actor.get_input() or {}
         urls = actor_input.get("urls", ["https://apify.com"])
         
@@ -39,6 +38,5 @@ async def main():
                     })
                     print(f"Failed to crawl {url}: {result.error_message}")
 
-# Run the actor
 if __name__ == "__main__":
     asyncio.run(main())
