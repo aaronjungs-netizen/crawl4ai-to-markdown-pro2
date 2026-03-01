@@ -1,8 +1,9 @@
 {
     "actorSpecification": 1,
-    "name": "my-crawl4ai-actor",
-    "title": "Crawl4AI Pro Scraper",
+    "name": "crawl4ai-to-markdown-pro2",
     "version": "1.0.0",
-    "dockerfile": "./Dockerfile"
+    "dockerfile": "./Dockerfile",
+    "input": "./input_schema.json",
+    "datasetSchema": "./dataset_schema.json"
 }
 
