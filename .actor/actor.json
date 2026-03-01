@@ -1,0 +1,7 @@
+{
+    "actorSpecification": 1,
+    "name": "my-crawl4ai-actor",
+    "title": "Crawl4AI Pro Scraper",
+    "version": "1.0.0",
+    "dockerfile": "./Dockerfile"
+}
