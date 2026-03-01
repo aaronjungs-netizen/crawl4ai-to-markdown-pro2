@@ -1,39 +1,22 @@
-import asyncio
-from apify import Actor
-from crawl4ai import AsyncWebCrawler, BrowserConfig, CrawlerRunConfig
-
 async def main():
     async with Actor:
-        # Get user input
+        # 1. Fetch the input provided by the user
         actor_input = await Actor.get_input() or {}
-        url = actor_input.get("url", "https://apify.com")
 
-        # Config for Apify's Docker environment
-        browser_cfg = BrowserConfig(
-            headless=True,
-            extra_args=["--no-sandbox", "--disable-setuid-sandbox"]
-        )
+        # 2. MATCH THE KEY: Use "urls" because that's what is in your input_schema.json
+        # We use .get("urls", []) to handle cases where the list might be empty
+        urls_input = actor_input.get("urls", [])
 
-        try:
-            async with AsyncWebCrawler(config=browser_cfg) as crawler:
-                # Perform the crawl
-                result = await crawler.arun(url=url)
+        # 3. Handle the 'requestListSources' format (it's a list of dicts)
+        # We extract the actual 'url' string from each object
+        urls = [item.get("url") for item in urls_input if item.get("url")]
 
-                if result.success:
-                    # Save results - KEYS MUST MATCH output_schema.json
-                    await Actor.push_data({
-                        "url": url,
-                        "title": result.metadata.get("title", "No Title"),
-                        "markdown": result.markdown
-                    })
-                    Actor.log.info(f"Successfully scraped: {url}")
-                else:
-                    Actor.log.error(f"Crawl failed: {result.error_message}")
-                    await Actor.fail()
-
-        except Exception as e:
-            Actor.log.error(f"Runtime error: {e}")
+        if not urls:
+            Actor.log.error("No URLs provided in the input!")
             await Actor.fail()
+            return
 
-if __name__ == "__main__":
-    asyncio.run(main())
+        # 4. Now loop through your extracted URLs
+        for url in urls:
+            Actor.log.info(f"Processing: {url}")
+            # ... your Crawl4AI logic goes here ...
