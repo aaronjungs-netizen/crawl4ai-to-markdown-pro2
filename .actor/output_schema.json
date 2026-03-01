@@ -1,37 +1,12 @@
 {
     "actorOutputSchemaVersion": 1,
     "title": "Crawl4AI Results",
-    "type": "object",
-    "properties": {
-        "url": {
-            "title": "Source URL",
-            "type": "string",
-            "views": {
-                "overview": {
-                    "template": "link",
-                    "label": "URL"
-                }
-            }
-        },
-        "title": {
-            "title": "Page Title",
-            "type": "string",
-            "views": {
-                "overview": {
-                    "template": "text",
-                    "label": "Title"
-                }
-            }
-        },
-        "markdown": {
-            "title": "Markdown Content",
-            "type": "string",
-            "views": {
-                "overview": {
-                    "template": "text",
-                    "label": "Markdown"
-                }
-            }
+    "views": {
+        "overview": {
+            "title": "Overview",
+            "type": "table",
+            "displayProperties": ["url", "title", "markdown"],
+            "template": "table"
         }
     }
 }
