@@ -2,7 +2,7 @@
     "actorSpecification": 1,
     "name": "crawl4ai-to-markdown-pro2",
     "version": "0.1",
-    "input": "./INPUT_SCHEMA.json",
-    "output": "./output_schema.json" 
+    "input": "./input_schema.json",
+    "output": "./output_schema.json"
 }
 
