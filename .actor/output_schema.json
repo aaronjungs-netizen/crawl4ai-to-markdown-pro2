@@ -1,21 +1,18 @@
 {
     "actorOutputSchemaVersion": 1,
     "title": "Crawl4AI Results",
+    "type": "object",
     "properties": {
         "url": {
             "title": "Source URL",
             "type": "string",
-            "description": "The URL of the page",
-            "editor": "textfield",
             "view": {
-                "template": "link"
+                "template": "text"
             }
         },
         "title": {
             "title": "Page Title",
             "type": "string",
-            "description": "Title of the page",
-            "editor": "textfield",
             "view": {
                 "template": "text"
             }
@@ -23,8 +20,6 @@
         "markdown": {
             "title": "Markdown Content",
             "type": "string",
-            "description": "The extracted markdown",
-            "editor": "textarea",
             "view": {
                 "template": "text"
             }
