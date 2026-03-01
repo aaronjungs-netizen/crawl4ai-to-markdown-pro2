@@ -1,0 +1,21 @@
+{
+    "actorOutputSchemaVersion": 1,
+    "title": "Crawl4AI Result",
+    "type": "object",
+    "properties": {
+        "url": {
+            "type": "string",
+            "title": "Source URL",
+            "description": "The page that was crawled."
+        },
+        "title": {
+            "type": "string",
+            "title": "Page Title"
+        },
+        "markdown": {
+            "type": "string",
+            "title": "Markdown Content",
+            "description": "Cleaned markdown text from the page."
+        }
+    }
+}
