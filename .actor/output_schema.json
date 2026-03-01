@@ -4,25 +4,19 @@
     "type": "object",
     "properties": {
         "url": {
-            "type": "string",
             "title": "URL",
-            "view": {
-                "template": "text"
-            }
+            "type": "string",
+            "template": "text"
         },
         "title": {
-            "type": "string",
             "title": "Title",
-            "view": {
-                "template": "text"
-            }
+            "type": "string",
+            "template": "text"
         },
         "markdown": {
-            "type": "string",
             "title": "Markdown",
-            "view": {
-                "template": "text"
-            }
+            "type": "string",
+            "template": "text"
         }
     }
 }
