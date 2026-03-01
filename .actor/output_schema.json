@@ -1,12 +1,28 @@
 {
     "actorOutputSchemaVersion": 1,
     "title": "Crawl4AI Results",
-    "views": {
-        "overview": {
-            "title": "Overview",
-            "type": "table",
-            "displayProperties": ["url", "title", "markdown"],
-            "template": "table"
+    "type": "object",
+    "properties": {
+        "url": {
+            "type": "string",
+            "title": "URL",
+            "view": {
+                "template": "text"
+            }
+        },
+        "title": {
+            "type": "string",
+            "title": "Title",
+            "view": {
+                "template": "text"
+            }
+        },
+        "markdown": {
+            "type": "string",
+            "title": "Markdown",
+            "view": {
+                "template": "text"
+            }
         }
     }
 }
