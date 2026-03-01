@@ -1,0 +1,19 @@
+{
+    "title": "Crawl4AI Scraper Results",
+    "type": "object",
+    "schemaVersion": 1,
+    "properties": {
+        "url": {
+            "title": "Source URL",
+            "type": "string"
+        },
+        "markdown": {
+            "title": "Markdown Content",
+            "type": "string"
+        },
+        "success": {
+            "title": "Status",
+            "type": "boolean"
+        }
+    }
+}
