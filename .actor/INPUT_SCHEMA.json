@@ -1,0 +1,15 @@
+{
+    "actorInputSchemaVersion": 1,
+    "title": "Crawl4AI to Markdown Pro",
+    "type": "object",
+    "properties": {
+        "startUrls": {
+            "title": "Start URLs",
+            "type": "array",
+            "description": "URLs to crawl and convert to markdown",
+            "editor": "requestListSources",
+            "prefill": [{ "url": "https://example.com" }]
+        }
+    },
+    "required": ["startUrls"]
+}
