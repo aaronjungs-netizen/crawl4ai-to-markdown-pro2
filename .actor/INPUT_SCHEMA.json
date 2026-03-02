@@ -1,10 +1,15 @@
-# Crawl4AI to Markdown Pro
-This Actor converts website content into clean Markdown using Crawl4AI.
-
-## Features
-- Deep crawling support
-- High-quality Markdown output
-- Fast and efficient
-
-## How to use
-Simply provide a list of URLs in the input and run the Actor.
+{
+    "actorInputSchemaVersion": 1,
+    "title": "Crawl4AI to Markdown Pro",
+    "type": "object",
+    "properties": {
+        "startUrls": {
+            "title": "Start URLs",
+            "type": "array",
+            "description": "URLs to crawl and convert to markdown",
+            "editor": "requestListSources",
+            "prefill": [{ "url": "https://example.com" }]
+        }
+    },
+    "required": ["startUrls"]
+}
