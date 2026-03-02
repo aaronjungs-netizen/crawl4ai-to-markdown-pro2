@@ -1,7 +1,8 @@
 {
     "actorSpecification": 1,
-    "name": "your-actor-name",
+    "name": "crawl4ai-to-markdown-pro2",
     "version": "1.0",
     "dockerfile": "./Dockerfile",
-    "input": "./INPUT_SCHEMA.json"
+    "input": "./INPUT_SCHEMA.json",
+    "readme": "./README.md"
 }
