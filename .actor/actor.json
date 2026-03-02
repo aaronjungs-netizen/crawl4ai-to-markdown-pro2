@@ -1,25 +1,8 @@
 {
-    "actorInputSchemaVersion": 1,
-    "title": "Crawl4AI to Markdown Pro Input",
-    "type": "object",
-    "schemaVersion": 1,
-    "properties": {
-        "urls": {
-            "title": "URLs to Crawl",
-            "type": "array",
-            "description": "List of URLs you want to convert to Markdown.",
-            "editor": "requestListSources",
-            "prefill": [
-                { "url": "https://apify.com" }
-            ]
-        },
-        "maxDepth": {
-            "title": "Max Depth",
-            "type": "integer",
-            "description": "How many levels deep should the crawler go?",
-            "minimum": 0,
-            "default": 1
-        }
-    },
-    "required": ["urls"]
+    "actorSpecification": 1,
+    "name": "crawl4ai-to-markdown-pro2",
+    "version": "1.0",
+    "dockerfile": "./Dockerfile",
+    "input": "./INPUT_SCHEMA.json",
+    "readme": "./README.md"
 }
