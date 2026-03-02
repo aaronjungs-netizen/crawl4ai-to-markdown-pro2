@@ -1,15 +1,18 @@
 {
     "actorInputSchemaVersion": 1,
-    "title": "Crawl4AI to Markdown Pro",
+    "schemaVersion": 1,
+    "title": "Crawl4AI to Markdown Pro Input",
     "type": "object",
     "properties": {
-        "startUrls": {
-            "title": "Start URLs",
+        "urls": {
+            "title": "URLs to Crawl",
             "type": "array",
-            "description": "URLs to crawl and convert to markdown",
+            "description": "List of URLs you want to convert to Markdown.",
             "editor": "requestListSources",
-            "prefill": [{ "url": "https://example.com" }]
+            "prefill": [
+                { "url": "https://apify.com" }
+            ]
         }
     },
-    "required": ["startUrls"]
+    "required": ["urls"]
 }
